@@ -10,6 +10,7 @@ import java.util.*;
 public class MemoryGame {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
+            GameController controller = NewGameController();
             new GameController().startGame();
         });
     }

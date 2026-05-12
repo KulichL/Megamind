@@ -12,7 +12,11 @@ public class StartWindow extends GameWindow{
 
     @Override
     protected void initUI() {
+        JLabel titleLabel = new JLabel("Memory Symbol Game");
+        titleLabel.setFont(new Font("Arial", Font.BOLD, 28));
+
         JButton startButton = new JButton("Start Game");
+        startButton.setFont(new Font("Arial", Font.PLAIN, 18));
 
         startButton.addActionListener(e -> {
             dispose();
@@ -20,8 +24,18 @@ public class StartWindow extends GameWindow{
         });
 
         setLayout(new GridBagLayout());
-        add(startButton);
+
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(2, 1, 10, 10));
+
+        panel.add(titleLabel);
+        panel.add(startButton);
+
+        add(panel);
+
         setVisible(true);
+    }
+}
     }
 }
 
