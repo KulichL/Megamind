@@ -36,6 +36,8 @@ public class StartWindow extends GameWindow{
         setVisible(true);
     }
 }
+    }
+}
 
 
 
