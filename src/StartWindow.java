@@ -1,15 +1,27 @@
 import javax.swing.*;
 import java.awt.*;
-
+/**
+ * Start window of the Memory Symbol Game.
+ * Displays the game title and start button which begins the game.
+ *
+ * @author Lukáš Kulich
+ */
 public class StartWindow extends GameWindow{
     private GameController controller;
-
+    /**
+     * Creates the start window and initializes UI.
+     *
+     * @param controller reference to the game controller
+     */
     public StartWindow(GameController controller) {
         super("Memory Game - Start");
         this.controller = controller;
         initUI();
     }
-
+    /**
+     * Initializes the UI components of the start window.
+     * Displays title and start button.
+     */
     @Override
     protected void initUI() {
         JLabel titleLabel = new JLabel("Memory Symbol Game");
@@ -36,8 +48,8 @@ public class StartWindow extends GameWindow{
         setVisible(true);
     }
 }
-    }
-}
+
+
 
 
 

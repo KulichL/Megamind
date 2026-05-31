@@ -1,20 +1,33 @@
 import javax.swing.*;
 import java.awt.*;
-
+/**
+ * Window that displays symbols for the player to memorize.
+ * After a short countdown, the window automatically closes
+ * and the game continues to the next phase.
+ *
+ * @author Lukáš Kulich
+ */
 class MemoryWindow extends GameWindow {
 
     private GameController controller;
     private java.util.List<String> symbols;
 
     private JLabel countdownLabel;
-
+    /**
+     * Creates a new memory window.
+     *
+     * @param controller reference to the game controller
+     * @param symbols list of symbols to memorize
+     */
     public MemoryWindow(GameController controller, java.util.List<String> symbols) {
         super("Memorize Symbols");
         this.controller = controller;
         this.symbols = symbols;
         initUI();
     }
-
+    /**
+     * Initializes UI components of the memory window.
+     */
     @Override
     protected void initUI() {
         setLayout(new BorderLayout());
@@ -37,9 +50,12 @@ class MemoryWindow extends GameWindow {
         add(countdownLabel, BorderLayout.SOUTH);
 
         setVisible(true);
-
         startCountdown();
     }
+    /**
+     * Starts countdown timer that controls how long
+     * the symbols are shown to the player.
+     */
 
     private void startCountdown() {
 
@@ -61,9 +77,7 @@ class MemoryWindow extends GameWindow {
                 controller.startRounds();
             }
         });
-
         timer.start();
     }
-
 }
 
